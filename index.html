@@ -115,42 +115,40 @@
     <footer>© 2026 • Shibasis Panda — Photography Portfolio</footer>
 
     <script>
-      const modal = document.getElementById("modal");
-      const modalImg = document.getElementById("modalImg");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalText = document.getElementById("modalText");
-      const closeBtn = document.getElementById("close");
+            const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalText = document.getElementById('modalText');
+      const closeBtn = document.getElementById('close');
+
 
       function openModal() {
-        modal.classList.add('open');
-        document.documentElement.classList.add('no-scroll');
-        document.body.classList.add('no-scroll');
+      openModal();
+      document.body.style.overflow = 'hidden';
       }
+
 
       function closeModal() {
-        modal.classList.add('open');
-        document.documentElement.classList.add('no-scroll');
-        document.body.classList.add('no-scroll');
+      modal.classList.remove('open');
+      document.body.style.overflow = 'hidden';
       }
 
-      document.querySelectorAll(".card img").forEach((img) => {
-        img.addEventListener("click", () => {
-          const card = img.closest(".card");
-          modalImg.src = img.src;
-          modalTitle.textContent = card.dataset.title;
-          modalText.textContent = card.dataset.context;
-          modal.classList.add("open");
-        });
+
+      document.querySelectorAll('.card img').forEach(img => {
+      img.addEventListener('click', () => {
+      const card = img.closest('.card');
+      modalImg.src = img.src;
+      modalTitle.textContent = card.dataset.title;
+      modalText.textContent = card.dataset.context;
+      modal.classList.add('open');
+      });
       });
 
-      closeBtn.addEventListener("click", closeModal);
-      modal.addEventListener("click", e => {
-        if (e.target === modal) closeModal();
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
       });
-
-      //Prevent scolling
-
-      modal.addEventListener('touchmove', e => e.preventDefault(), {passive: false});
     </script>
   </body>
 </html>
