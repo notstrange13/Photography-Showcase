@@ -1,4 +1,4 @@
-# 📸 Photography Portfolio Website
+# 📸 Sight of a Being
 
 A modern, responsive photography portfolio website to showcase images along with the **story and context behind each photograph**.  
 Designed with a minimal dark aesthetic and smooth animations for a premium viewing experience.
