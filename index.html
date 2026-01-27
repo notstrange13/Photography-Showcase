@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sight of a Being</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sight of a Being</h1>
+      <h3>My Photography collection</h3>
+      <p>
+        A curated collection of moments. Click any photo to read the full
+        context behind the shot.
+      </p>
+    </header>
+
+    <main>
+      <section class="grid">
+        <!-- Card 1 -->
+        <article
+          class="card"
+          data-title="Sprinkle Of Sunlight"
+          data-context="Shot while coming back from the college. It was a harsh summer afternoon but the sense of peace to be under a tree and then looking at the sun from the leaves made me feel somewhat superior."
+        >
+          <img
+            src="images/sprinkle-of-sunlight.jpg"
+            alt="Sprinkle of Sunlight"
+          />
+          <div class="content">
+            <h3>Sprinkle Of Sunlight</h3>
+            <p>Essence of peace in the harsh sunlight.</p>
+            <span class="tag">Street</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="card"
+          data-title="Ghat Of Sets"
+          data-context="Shot on the Ghat of river Narmada. This is the town of Amarkantak, origin of river Narmada and Son. We make ghats a place for rituals for the dead. Interesting, isn't it. Start for some, end for everyone."
+        >
+          <img src="images/ghat-of-sets.jpg" alt="Ghat Of Sets" />
+          <div class="content">
+            <h3>Ghat Of Sets</h3>
+            <p>Ghat of Narmade. Begins. Ends.</p>
+            <span class="tag">Landscape</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="card"
+          data-title="Perceptions"
+          data-context="Shot in Shri Yantra Mandir, Amarkantak. This is a statue with four faces showing all the four very basic emotions of human but you can see a face at once, just like life."
+        >
+          <img src="images/perceptions.jpg" alt="Perceptions" />
+          <div class="content">
+            <h3>Perceptions</h3>
+            <p>
+              We change thought on what we see rather than what we experience.
+            </p>
+            <span class="tag">Heritage</span>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article
+          class="card"
+          data-title="Power Of Being Human"
+          data-context="Shot in Lakhanpur Mining Site, Jharsuguda. The scale of this open air mining site is what shook me. This is the main ingridient of your daily life cause it is what it takes to run everything even today."
+        >
+          <img src="images/power-of-being-human.jpg" alt="power-of-being-human" />
+          <div class="content">
+            <h3>Power Of Being Human</h3>
+            <p>
+              Human is the most powerful creature in this world.
+            </p>
+            <span class="tag">Landscape</span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <button class="close" id="close">×</button>
+      <div class="modal-card">
+        <img id="modalImg" src="" alt="" />
+        <div class="modal-content">
+          <h2 id="modalTitle"></h2>
+          <p id="modalText"></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2026 • Shibasis Panda — Photography Portfolio</footer>
+
+    <script>
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalText = document.getElementById("modalText");
+      const closeBtn = document.getElementById("close");
+
+      document.querySelectorAll(".card img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const card = img.closest(".card");
+          modalImg.src = img.src;
+          modalTitle.textContent = card.dataset.title;
+          modalText.textContent = card.dataset.context;
+          modal.classList.add("open");
+        });
+      });
+
+      closeBtn.addEventListener("click", () => modal.classList.remove("open"));
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
