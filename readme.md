@@ -23,10 +23,12 @@ Designed with a minimal dark aesthetic and smooth animations for a premium viewi
 
 ## 📂 Project Structure
 
+````
 photography-portfolio/
 │
 ├── index.html        # Main website file
 ├── README.md         # Project documentation
+````
 
 ````
 
