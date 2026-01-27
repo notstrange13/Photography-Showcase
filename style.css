@@ -12,6 +12,13 @@
   --muted: #b6b6c2;
   --accent: #7aa2ff;
 }
+
+html.no-scroll, body.no-scroll{
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
 * {
   box-sizing: border-box;
 }

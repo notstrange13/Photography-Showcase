@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type= "images/png" href="images/icon.png">
+    <link rel="icon" type="images/png" href="images/icon.png" />
     <title>Sight of a Being</title>
   </head>
   <body>
@@ -71,12 +71,29 @@
           data-title="Power Of Being Human"
           data-context="Shot in Lakhanpur Mining Site, Jharsuguda. The scale of this open air mining site is what shook me. This is the main ingridient of your daily life cause it is what it takes to run everything even today."
         >
-          <img src="images/power-of-being-human.jpg" alt="power-of-being-human" />
+          <img
+            src="images/power-of-being-human.jpg"
+            alt="power-of-being-human"
+          />
           <div class="content">
             <h3>Power Of Being Human</h3>
-            <p>
-              Human is the most powerful creature in this world.
-            </p>
+            <p>Human is the most powerful creature in this world.</p>
+            <span class="tag">Landscape</span>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article
+          class="card"
+          data-title="Power Of Being Human"
+          data-context="Shot in Lakhanpur Mining Site, Jharsuguda. The scale of this open air mining site is what shook me. This is the main ingridient of your daily life cause it is what it takes to run everything even today."
+        >
+          <img
+            src="images/power-of-being-human.jpg"
+            alt="power-of-being-human"
+          />
+          <div class="content">
+            <h3>Power Of Being Human</h3>
+            <p>Human is the most powerful creature in this world.</p>
             <span class="tag">Landscape</span>
           </div>
         </article>
@@ -104,6 +121,18 @@
       const modalText = document.getElementById("modalText");
       const closeBtn = document.getElementById("close");
 
+      function openModal() {
+        modal.classList.add('open');
+        document.documentElement.classList.add('no-scroll');
+        document.body.classList.add('no-scroll');
+      }
+
+      function closeModal() {
+        modal.classList.add('open');
+        document.documentElement.classList.add('no-scroll');
+        document.body.classList.add('no-scroll');
+      }
+
       document.querySelectorAll(".card img").forEach((img) => {
         img.addEventListener("click", () => {
           const card = img.closest(".card");
@@ -114,10 +143,14 @@
         });
       });
 
-      closeBtn.addEventListener("click", () => modal.classList.remove("open"));
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.classList.remove("open");
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", e => {
+        if (e.target === modal) closeModal();
       });
+
+      //Prevent scolling
+
+      modal.addEventListener('touchmove', e => e.preventDefault(), {passive: false});
     </script>
   </body>
 </html>
