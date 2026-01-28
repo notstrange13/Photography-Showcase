@@ -13,6 +13,12 @@
   --accent: #7aa2ff;
 }
 
+.nav-title {
+  font-family: "Evossary", serif;
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
 html.no-scroll,
 body.no-scroll {
   overflow: hidden;
@@ -131,7 +137,7 @@ main {
   animation: popIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.modal.closing .modal-card{
+.modal.closing .modal-card {
   animation: popOut 0.25s ease forwards;
 }
 
@@ -193,14 +199,14 @@ footer {
   }
 }
 
-@keyframes fadeOut{
-  to{
+@keyframes fadeOut {
+  to {
     opacity: 0;
   }
 }
 
-@keyframes popOut{
-  to{
+@keyframes popOut {
+  to {
     transform: scale(0.96) translateY(10px);
     opacity: 0;
   }
