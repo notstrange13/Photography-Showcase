@@ -67,8 +67,10 @@ main {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition:
-    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.25s ease;
+  transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+  box-shadow 0.25s ease;
+  cursor: pointer;
+}
 }
 .card:hover {
   transform: translateY(-3px);
