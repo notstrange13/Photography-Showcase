@@ -265,7 +265,7 @@
 
       document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", () => {
-          const img = card.querySelector(".img");
+          const img = card.querySelector("img");
           modalImg.src = img.src;
           modalTitle.textContent = card.dataset.title;
           modalText.textContent = card.dataset.context;
