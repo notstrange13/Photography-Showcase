@@ -263,9 +263,9 @@
         }, 250);
       }
 
-      document.querySelectorAll(".card").forEach((card) => {
-        card.addEventListener("click", () => {
-          const img = card.closest("img");
+      document.querySelectorAll(".card img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const card = img.closest(".card");
           modalImg.src = img.src;
           modalTitle.textContent = card.dataset.title;
           modalText.textContent = card.dataset.context;
