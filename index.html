@@ -263,17 +263,16 @@
         }, 250);
       }
 
-     document.querySelectorAll(".card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const img = card.querySelector("img");
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const img = card.querySelector(".img");
+          modalImg.src = img.src;
+          modalTitle.textContent = card.dataset.title;
+          modalText.textContent = card.dataset.context;
 
-      modalImg.src = img.src;
-      modalTitle.textContent = card.dataset.title;
-      modalText.textContent = card.dataset.context;
-
-      openModal();
-    });
-  });
+          openModal();
+        });
+      });
       closeBtn.addEventListener("click", closeModal);
       modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
