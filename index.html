@@ -263,16 +263,17 @@
         }, 250);
       }
 
-      document.querySelectorAll(".card img").forEach((img) => {
-        img.addEventListener("click", () => {
-          const card = img.closest(".card");
-          modalImg.src = img.src;
-          modalTitle.textContent = card.dataset.title;
-          modalText.textContent = card.dataset.context;
-          modal.classList.add("open");
-        });
-      });
+     document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
 
+      modalImg.src = img.src;
+      modalTitle.textContent = card.dataset.title;
+      modalText.textContent = card.dataset.context;
+
+      openModal();
+    });
+  });
       closeBtn.addEventListener("click", closeModal);
       modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
