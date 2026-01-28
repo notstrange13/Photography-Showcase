@@ -248,8 +248,8 @@
       const closeBtn = document.getElementById("close");
 
       function openModal() {
-        openModal();
-        document.body.style.overflow = "hidden";
+       modal.classList.add("open");
+       document.body.classList.add("no-scroll");
       }
 
       function closeModal() {
